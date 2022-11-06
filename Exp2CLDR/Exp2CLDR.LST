@@ -1,0 +1,114 @@
+A51 MACRO ASSEMBLER  EXP2CLDR                                                             10/17/2022 14:58:02 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp2CLDR.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp2CLDR.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+8100                   3                     ORG 8100H
+                       4                             
+8100 90E803            5                             MOV DPTR,#0XE803
+8103 7481              6                             MOV A, #81H
+8105 F0                7                             MOVX @DPTR,A
+                       8                             
+8106 7810              9                             MOV R0,#16
+8108 909000           10                             MOV DPTR,#9000H
+810B 7401             11                             MOV A,#1
+                      12                             
+810D                  13                             LOOP:
+810D F0               14                                 MOVX @DPTR,A
+810E A3               15                     INC DPTR
+810F 04               16                     INC A                           
+8110 D8FB             17                                     DJNZ R0,LOOP
+                      18                         
+8112 7F0F             19                             MOV R7,#0FH
+8114                  20                             START:
+8114 7810             21                                     MOV R0,#16
+8116 909000           22                                     MOV DPTR,#9000H
+8119 7E00             23                                     MOV R6,#0
+                      24                                     
+                      25                                     
+811B                  26                                     LOOP1:
+                      27     
+                      28                                             ; Delay Loops
+811B 7AFF             29                                             MOV R2,#255
+811D                  30                                                     LOOP01:
+811D 7B20             31                                                             MOV R3,#32
+811F                  32                                                             LOOP02:
+811F 7C37             33                                                                     MOV R4,#55
+8121                  34                                                                     LOOP03:
+8121 DCFE             35                                                                             DJNZ R4,LOOP03
+8123 DBFA             36                                                                     DJNZ R3,LOOP02
+8125 DAF6             37                                                             DJNZ R2,LOOP01
+                      38                                                             
+8127 90E802           39                                             MOV DPTR,#0XE802
+812A E0               40                                             MOVX A,@DPTR
+812B 5401             41                                             ANL A,#01H
+812D 6401             42                                             XRL A,#01H
+812F 6002             43                                             JZ BLINK
+8131 700D             44                                             JNZ NORMAL
+                      45                                             
+8133                  46                                             BLINK:
+8133 90E800           47                                                     MOV DPTR,#0XE800
+8136 EF               48                                                     MOV A,R7
+8137 F0               49                                                     MOVX @DPTR,A
+                      50                                                     
+8138 90E801           51                                                     MOV DPTR,#0XE801
+813B F0               52                                                     MOVX @DPTR,A
+                      53                                                     
+813C F4               54                                                     CPL A
+813D FF               55                                                     MOV R7,A
+                      56                                                     
+813E 80D4             57                                                     SJMP START
+                      58                                             
+A51 MACRO ASSEMBLER  EXP2CLDR                                                             10/17/2022 14:58:02 PAGE     2
+
+8140                  59                                             NORMAL:
+8140 909000           60                                                     MOV DPTR,#9000H
+8143 8E82             61                                                     MOV DPL,R6
+8145 E0               62                                                     MOVX A,@DPTR
+                      63                                                     ;MOV R1,DPL
+8146 90E801           64                                                     MOV DPTR,#0XE801
+8149 F0               65                                                     MOVX @DPTR,A
+                      66                                                     
+                      67                                                     
+814A 90E800           68                                                     MOV DPTR,#0XE800
+814D EE               69                                                     MOV A,R6
+814E F0               70                                                     MOVX @DPTR,A
+                      71                                                     
+814F 0E               72                                                     INC R6
+                      73                                                     
+8150 D8C9             74                                                     DJNZ R0,LOOP1                              
+                                          
+                      75                                             
+8152 80C0             76                                     SJMP START
+                      77                             
+                      78                                     
+                      79                     END
+A51 MACRO ASSEMBLER  EXP2CLDR                                                             10/17/2022 14:58:02 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BLINK. . . . . . .  C ADDR   8133H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+LOOP . . . . . . .  C ADDR   810DH   A   
+LOOP01 . . . . . .  C ADDR   811DH   A   
+LOOP02 . . . . . .  C ADDR   811FH   A   
+LOOP03 . . . . . .  C ADDR   8121H   A   
+LOOP1. . . . . . .  C ADDR   811BH   A   
+NORMAL . . . . . .  C ADDR   8140H   A   
+START. . . . . . .  C ADDR   8114H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

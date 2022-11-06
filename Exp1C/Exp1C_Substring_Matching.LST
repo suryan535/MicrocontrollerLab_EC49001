@@ -1,0 +1,110 @@
+A51 MACRO ASSEMBLER  EXP1C_SUBSTRING_MATCHING                                             08/29/2022 16:02:33 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp1C_Substring_Matching.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp1C_Substring_Matching.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     
+                       2                     
+                       3                     
+                       4                     
+8100                   5                     ORG 8100H
+                       6                             
+8100 909000            7                     MOV DPTR,#9000H
+8103 7410              8                     MOV A,#10H
+8105 7805              9                     MOV R0,#5 ; stores length of pattern
+8107                  10                     GENERATE_PATTERN:
+8107 F0               11                             MOVX @DPTR,A
+8108 14               12                             DEC A
+8109 A3               13                             INC DPTR
+810A D8FB             14                             DJNZ R0,GENERATE_PATTERN
+810C 7400             15                     MOV A,#0
+810E F0               16                     MOVX @DPTR,A
+810F 7805             17                     MOV R0,#5
+                      18     
+8111 909200           19                     MOV DPTR,#9200H
+8114 741F             20                     MOV A,#1FH
+8116 7914             21                     MOV R1,#20 ; stores length of string to be matched with
+8118                  22                     GENERATE_STRING:
+8118 F0               23                             MOVX @DPTR,A
+8119 14               24                             DEC A
+811A A3               25                             INC DPTR
+811B D9FB             26                             DJNZ R1,GENERATE_STRING
+811D 7400             27                     MOV A,#0
+811F F0               28                     MOVX @DPTR,A
+                      29     
+8120 909500           30                     MOV DPTR,#9500H
+8123 74FF             31                     MOV A,#0XFF
+8125 F0               32                     MOVX @DPTR,A
+                      33     
+8126 7A00             34                     MOV R2,#0 ; starting index to be matched in string
+8128                  35                     TRAVERSE_STRING:
+8128 7B00             36                             MOV R3,#0 ; current index in pattern which is to be matched with st
+                             ring
+812A                  37                             MATCH_PATTERN:
+812A 909200           38                                     MOV DPTR,#9200H
+812D E582             39                                     MOV A,DPL
+812F 2A               40                                     ADD A,R2
+8130 2B               41                                     ADD A,R3
+8131 F582             42                                     MOV DPL,A
+8133 E0               43                                     MOVX A,@DPTR
+8134 FC               44                                     MOV R4,A
+                      45     
+8135 601F             46                                     JZ STOP ; if character in string is null, it means we do no
+                             t have sufficient remaining length of string to match
+                      47     
+8137 909000           48                                     MOV DPTR,#9000H
+813A E582             49                                     MOV A,DPL
+813C 2B               50                                     ADD A,R3
+813D F582             51                                     MOV DPL,A
+813F E0               52                                     MOVX A,@DPTR
+                      53     
+8140 8CF0             54                                     MOV B,R4
+8142 B5F00E           55                                     CJNE A,B,IGNORE_NEXT ; if current characters didn't match, 
+                             ignore subsequent characters 
+A51 MACRO ASSEMBLER  EXP1C_SUBSTRING_MATCHING                                             08/29/2022 16:02:33 PAGE     2
+
+                      56     
+8145 0B               57                                     INC R3
+8146 EB               58                                     MOV A,R3
+8147 88F0             59                                     MOV B,R0
+8149 B5F0DE           60                                     CJNE A,B,MATCH_PATTERN
+                      61     
+814C 909500           62                                     MOV DPTR,#9500H
+814F EA               63                                     MOV A,R2
+8150 F0               64                                     MOVX @DPTR,A
+8151 8003             65                                     SJMP STOP
+                      66     
+8153                  67                                     IGNORE_NEXT:
+8153 0A               68                                             INC R2 ; increment starting index in string and sta
+                             rt checking again
+8154 80D2             69                                             SJMP TRAVERSE_STRING
+                      70     
+8156 80FE             71                     STOP: SJMP STOP
+                      72                     
+                      73                     END
+A51 MACRO ASSEMBLER  EXP1C_SUBSTRING_MATCHING                                             08/29/2022 16:02:33 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+GENERATE_PATTERN .  C ADDR   8107H   A   
+GENERATE_STRING. .  C ADDR   8118H   A   
+IGNORE_NEXT. . . .  C ADDR   8153H   A   
+MATCH_PATTERN. . .  C ADDR   812AH   A   
+STOP . . . . . . .  C ADDR   8156H   A   
+TRAVERSE_STRING. .  C ADDR   8128H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

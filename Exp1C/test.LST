@@ -1,0 +1,39 @@
+A51 MACRO ASSEMBLER  TEST                                                                 08/29/2022 14:24:36 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE test.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+1FA4                   5                     ORG 8100
+1FA4 909000            6                             MOV DPTR,#9000H
+1FA7 780A              7                             MOV R0,#10
+                       8                             
+1FA9                   9                             LOOP:
+1FA9                  10                             MOV @DPTR,R0
+*** _____________________________________________________^
+*** ERROR #A40 IN 10 (test.A51, LINE 10): INVALID REGISTER
+1FA9 A3               11                             INC DPTR
+1FAA D8FD             12                             DJNZ R0,LOOP
+                      13                     END
+A51 MACRO ASSEMBLER  TEST                                                                 08/29/2022 14:24:36 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP . . . . . . .  C ADDR   1FA9H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 1 ERROR(S)

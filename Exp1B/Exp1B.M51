@@ -1,0 +1,105 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/29/2022  15:30:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Exp1B_Poly_Eval.obj, Exp1B_extra.obj TO Exp1B
+
+
+INPUT MODULES INCLUDED:
+  Exp1B_Poly_Eval.obj (EXP1B_POLY_EVAL)
+  Exp1B_extra.obj (EXP1B_EXTRA)
+
+
+LINK MAP OF MODULE:  Exp1B (EXP1B_POLY_EVAL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     8154H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Exp1B (EXP1B_POLY_EVAL)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP1B_POLY_EVAL
+  -------         ENDMOD        EXP1B_POLY_EVAL
+
+  -------         MODULE        EXP1B_EXTRA
+  D:00F0H         SYMBOL        B
+  D:0082H         SYMBOL        DPL
+  C:8131H         SYMBOL        EVALUATE
+  C:8117H         SYMBOL        LOOP
+  C:8152H         SYMBOL        STOP
+  C:8100H         LINE#         5
+  C:8103H         LINE#         6
+  C:8105H         LINE#         7
+  C:8106H         LINE#         9
+  C:8109H         LINE#         10
+  C:810BH         LINE#         11
+  C:810CH         LINE#         13
+  C:810FH         LINE#         14
+  C:8110H         LINE#         15
+  C:8111H         LINE#         16
+  C:8112H         LINE#         18
+  C:8115H         LINE#         19
+  C:8117H         LINE#         22
+  C:8118H         LINE#         23
+  C:8119H         LINE#         25
+  C:811BH         LINE#         27
+  C:811EH         LINE#         28
+  C:811FH         LINE#         29
+  C:8120H         LINE#         31
+  C:8123H         LINE#         32
+  C:8124H         LINE#         33
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/29/2022  15:30:26  PAGE 2
+
+
+  C:8125H         LINE#         35
+  C:8128H         LINE#         36
+  C:812AH         LINE#         37
+  C:812BH         LINE#         38
+  C:812DH         LINE#         39
+  C:812EH         LINE#         41
+  C:812FH         LINE#         42
+  C:8131H         LINE#         45
+  C:8132H         LINE#         46
+  C:8134H         LINE#         47
+  C:8135H         LINE#         48
+  C:8136H         LINE#         49
+  C:8138H         LINE#         51
+  C:8139H         LINE#         52
+  C:813BH         LINE#         53
+  C:813CH         LINE#         54
+  C:813DH         LINE#         55
+  C:813EH         LINE#         57
+  C:8140H         LINE#         58
+  C:8141H         LINE#         59
+  C:8142H         LINE#         60
+  C:8143H         LINE#         62
+  C:8145H         LINE#         63
+  C:8146H         LINE#         64
+  C:8147H         LINE#         65
+  C:8148H         LINE#         67
+  C:814AH         LINE#         69
+  C:814DH         LINE#         70
+  C:814EH         LINE#         71
+  C:814FH         LINE#         72
+  C:8150H         LINE#         73
+  C:8151H         LINE#         74
+  C:8152H         LINE#         76
+  -------         ENDMOD        EXP1B_EXTRA
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0054H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33108
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

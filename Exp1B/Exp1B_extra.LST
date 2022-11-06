@@ -1,0 +1,108 @@
+A51 MACRO ASSEMBLER  EXP1B_EXTRA                                                          08/29/2022 15:30:26 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp1B_extra.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp1B_extra.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     
+                       2                     
+8100                   3                     ORG 8100H       
+                       4                     
+8100 909500            5                     MOV DPTR,#9500H
+8103 740A              6                     MOV A,#10
+8105 F0                7                     MOVX @DPTR,A ; value of n stored at 9500H
+                       8     
+8106 909501            9                     MOV DPTR,#9501H
+8109 7402             10                     MOV A,#2
+810B F0               11                     MOVX @DPTR,A ; value of x stored at 9501H
+                      12     
+810C 909500           13                     MOV DPTR,#9500H
+810F E0               14                     MOVX A,@DPTR
+8110 F8               15                     MOV R0,A
+8111 08               16                     INC R0
+                      17     
+8112 909502           18                     MOV DPTR,#9502H
+8115 7401             19                     MOV A,#1 ; value of a[0]
+                      20     
+8117                  21                     LOOP:
+8117 F0               22                             MOVX @DPTR,A ; keeps storing a[0],a[1],...,a[n]
+8118 A3               23                             INC DPTR
+                      24                             ;DEC A
+8119 D8FC             25                             DJNZ R0,LOOP
+                      26     
+811B 909501           27                     MOV DPTR,#9501H
+811E E0               28                     MOVX A,@DPTR
+811F F8               29                     MOV R0,A ; R0 stores the value of x
+                      30     
+8120 909500           31                     MOV DPTR,#9500H
+8123 E0               32                     MOVX A,@DPTR
+8124 F9               33                     MOV R1,A ; R1 stores the value of n
+                      34     
+8125 909502           35                     MOV DPTR,#9502H
+8128 E582             36                     MOV A,DPL ; lower bits of starting address
+812A 29               37                     ADD A,R1 ; lower bits of address of a[n]
+812B F582             38                     MOV DPL,A ; DPTR points to address of a[n]
+812D E0               39                     MOVX A,@DPTR
+                      40                     
+812E FA               41                     MOV R2,A ; R2 stores the LSB of evaluated polynomial
+812F 7B00             42                     MOV R3,#00H ; R3 stores the MSB of evaluated polynomial
+                      43     
+8131                  44                     EVALUATE:
+8131 EA               45                             MOV A,R2
+8132 88F0             46                             MOV B,R0
+8134 A4               47                             MUL AB ; multiply x with value evaluated till now
+8135 FA               48                             MOV R2,A ; store the LSB value back into R2
+8136 ACF0             49                             MOV R4,B ; store MSB after multiplication into R4
+                      50                             
+8138 EB               51                             MOV A,R3
+8139 88F0             52                             MOV B,R0
+813B A4               53                             MUL AB
+813C 2C               54                             ADD A,R4
+813D FB               55                             MOV R3,A ; MSB after complete multiplication stored into R3
+                      56                             
+813E 1582             57                             DEC DPL
+8140 E0               58                             MOVX A,@DPTR ; store previous coefficient in A
+A51 MACRO ASSEMBLER  EXP1B_EXTRA                                                          08/29/2022 15:30:26 PAGE     2
+
+8141 2A               59                             ADD A,R2 ; add the coefficient to the result
+8142 FA               60                             MOV R2,A
+                      61                             
+8143 7C00             62                             MOV R4,#00H
+8145 EB               63                             MOV A,R3
+8146 3C               64                             ADDC A,R4
+8147 FB               65                             MOV R3,A
+                      66                             
+8148 D9E7             67                             DJNZ R1,EVALUATE
+                      68                             
+814A 909550           69                     MOV DPTR,#9550H
+814D EA               70                     MOV A,R2
+814E F0               71                     MOVX @DPTR,A
+814F A3               72                     INC DPTR
+8150 EB               73                     MOV A,R3
+8151 F0               74                     MOVX @DPTR,A
+                      75     
+8152 80FE             76                     STOP: SJMP STOP
+                      77                     
+                      78                     END
+A51 MACRO ASSEMBLER  EXP1B_EXTRA                                                          08/29/2022 15:30:26 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+EVALUATE . . . . .  C ADDR   8131H   A   
+LOOP . . . . . . .  C ADDR   8117H   A   
+STOP . . . . . . .  C ADDR   8152H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

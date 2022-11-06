@@ -1,0 +1,113 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/29/2022  16:27:50  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Exp1C_Circular_Match.obj TO Exp1C_Circular_Match
+
+
+INPUT MODULES INCLUDED:
+  Exp1C_Circular_Match.obj (EXP1C_CIRCULAR_MATCH)
+
+
+LINK MAP OF MODULE:  Exp1C_Circular_Match (EXP1C_CIRCULAR_MATCH)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     816CH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Exp1C_Circular_Match (EXP1C_CIRCULAR_MATCH)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP1C_CIRCULAR_MATCH
+  D:00F0H         SYMBOL        B
+  D:0082H         SYMBOL        DPL
+  C:8107H         SYMBOL        GENERATE_PATTERN
+  C:8118H         SYMBOL        GENERATE_STRING1
+  C:8121H         SYMBOL        GENERATE_STRING2
+  C:8167H         SYMBOL        IGNORE_NEXT
+  C:813CH         SYMBOL        MATCH_PATTERN
+  C:816AH         SYMBOL        STOP
+  C:8133H         SYMBOL        TRAVERSE_STRING
+  C:8100H         LINE#         7
+  C:8103H         LINE#         8
+  C:8105H         LINE#         9
+  C:8107H         LINE#         12
+  C:8108H         LINE#         13
+  C:8109H         LINE#         14
+  C:810AH         LINE#         15
+  C:810CH         LINE#         17
+  C:810EH         LINE#         18
+  C:810FH         LINE#         19
+  C:8111H         LINE#         21
+  C:8114H         LINE#         22
+  C:8116H         LINE#         23
+  C:8118H         LINE#         25
+  C:8119H         LINE#         26
+  C:811AH         LINE#         27
+  C:811BH         LINE#         28
+  C:811DH         LINE#         30
+  C:811FH         LINE#         31
+  C:8121H         LINE#         33
+  C:8122H         LINE#         34
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/29/2022  16:27:50  PAGE 2
+
+
+  C:8123H         LINE#         35
+  C:8124H         LINE#         36
+  C:8126H         LINE#         38
+  C:8128H         LINE#         40
+  C:812AH         LINE#         41
+  C:812BH         LINE#         43
+  C:812EH         LINE#         44
+  C:8130H         LINE#         45
+  C:8131H         LINE#         47
+  C:8133H         LINE#         50
+  C:8134H         LINE#         51
+  C:8136H         LINE#         52
+  C:8138H         LINE#         53
+  C:813AH         LINE#         55
+  C:813CH         LINE#         57
+  C:813FH         LINE#         58
+  C:8141H         LINE#         59
+  C:8142H         LINE#         60
+  C:8143H         LINE#         61
+  C:8145H         LINE#         62
+  C:8146H         LINE#         63
+  C:8149H         LINE#         64
+  C:814AH         LINE#         65
+  C:814BH         LINE#         67
+  C:814EH         LINE#         68
+  C:8150H         LINE#         69
+  C:8151H         LINE#         70
+  C:8153H         LINE#         71
+  C:8154H         LINE#         73
+  C:8156H         LINE#         74
+  C:8159H         LINE#         76
+  C:815AH         LINE#         77
+  C:815BH         LINE#         78
+  C:815DH         LINE#         79
+  C:8160H         LINE#         81
+  C:8163H         LINE#         82
+  C:8164H         LINE#         83
+  C:8165H         LINE#         84
+  C:8167H         LINE#         87
+  C:8168H         LINE#         88
+  C:816AH         LINE#         90
+  -------         ENDMOD        EXP1C_CIRCULAR_MATCH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006CH BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33132
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,103 @@
+A51 MACRO ASSEMBLER  8255_LED_BLINK                                                       10/10/2022 15:30:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN 8255_LED_blink.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE 8255_LED_blink.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     
+                       2                     
+                       3                     
+8100                   4                     ORG 8100H
+                       5                             
+8100 90E803            6                     MOV DPTR,#0XE803
+8103 7480              7                     MOV A, #80H
+8105 F0                8                     MOVX @DPTR,A
+                       9                     
+8106 90E800           10                     MOV DPTR, #0XE800
+8109 7400             11                     MOV A,#00H
+810B F0               12                     MOVX @DPTR,A
+810C                  13                     LOOP:
+810C 7401             14                             MOV A,#01H
+810E F0               15                             MOVX @DPTR,A
+810F 78FF             16                             MOV R0,#255
+8111                  17                             LOOP01:
+8111 7920             18                                     MOV R1,#32
+8113                  19                                     LOOP02:
+8113 7A34             20                                             MOV R2,#52
+8115                  21                                             LOOP03:
+8115 DAFE             22                                                     DJNZ R2,LOOP03
+8117 D9FA             23                                             DJNZ R1,LOOP02
+8119 D8F6             24                                     DJNZ R0,LOOP01
+                      25                                     
+811B 7402             26                             MOV A,#02H
+811D F0               27                             MOVX @DPTR,A
+811E 78FF             28                             MOV R0,#255
+8120                  29                             LOOP11:
+8120 7920             30                                     MOV R1,#32
+8122                  31                                     LOOP12:
+8122 7A34             32                                             MOV R2,#52
+8124                  33                                             LOOP13:
+8124 DAFE             34                                                     DJNZ R2,LOOP13
+8126 D9FA             35                                             DJNZ R1,LOOP12
+8128 D8F6             36                                     DJNZ R0,LOOP11
+                      37                                     
+812A 7404             38                             MOV A,#04H
+812C F0               39                             MOVX @DPTR,A
+812D 78FF             40                             MOV R0,#255
+812F                  41                             LOOP21:
+812F 7920             42                                     MOV R1,#32
+8131                  43                                     LOOP22:
+8131 7A34             44                                             MOV R2,#52
+8133                  45                                             LOOP23:
+8133 DAFE             46                                                     DJNZ R2,LOOP23
+8135 D9FA             47                                             DJNZ R1,LOOP22
+8137 D8F6             48                                     DJNZ R0,LOOP21
+                      49                             
+8139 7408             50                             MOV A,#08H
+813B F0               51                             MOVX @DPTR,A
+813C 78FF             52                             MOV R0,#255
+813E                  53                             LOOP31:
+813E 7920             54                                     MOV R1,#32
+8140                  55                                     LOOP32:
+8140 7A34             56                                             MOV R2,#52
+8142                  57                                             LOOP33:
+8142 DAFE             58                                                     DJNZ R2,LOOP33
+A51 MACRO ASSEMBLER  8255_LED_BLINK                                                       10/10/2022 15:30:46 PAGE     2
+
+8144 D9FA             59                                             DJNZ R1,LOOP32
+8146 D8F6             60                                     DJNZ R0,LOOP31
+                      61                             
+8148 80C2             62                             SJMP LOOP
+                      63                             
+                      64                             
+                      65                     END
+A51 MACRO ASSEMBLER  8255_LED_BLINK                                                       10/10/2022 15:30:46 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP . . . . . . .  C ADDR   810CH   A   
+LOOP01 . . . . . .  C ADDR   8111H   A   
+LOOP02 . . . . . .  C ADDR   8113H   A   
+LOOP03 . . . . . .  C ADDR   8115H   A   
+LOOP11 . . . . . .  C ADDR   8120H   A   
+LOOP12 . . . . . .  C ADDR   8122H   A   
+LOOP13 . . . . . .  C ADDR   8124H   A   
+LOOP21 . . . . . .  C ADDR   812FH   A   
+LOOP22 . . . . . .  C ADDR   8131H   A   
+LOOP23 . . . . . .  C ADDR   8133H   A   
+LOOP31 . . . . . .  C ADDR   813EH   A   
+LOOP32 . . . . . .  C ADDR   8140H   A   
+LOOP33 . . . . . .  C ADDR   8142H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

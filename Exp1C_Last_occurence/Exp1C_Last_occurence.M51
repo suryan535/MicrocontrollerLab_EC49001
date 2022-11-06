@@ -1,0 +1,108 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/29/2022  16:04:50  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Exp1C_Last_occurence.obj TO Exp1C_Last_occurence
+
+
+INPUT MODULES INCLUDED:
+  Exp1C_Last_occurence.obj (EXP1C_LAST_OCCURENCE)
+
+
+LINK MAP OF MODULE:  Exp1C_Last_occurence (EXP1C_LAST_OCCURENCE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     8163H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Exp1C_Last_occurence (EXP1C_LAST_OCCURENCE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP1C_LAST_OCCURENCE
+  D:00F0H         SYMBOL        B
+  D:0082H         SYMBOL        DPL
+  C:8107H         SYMBOL        GENERATE_PATTERN
+  C:8118H         SYMBOL        GENERATE_STRING1
+  C:8121H         SYMBOL        GENERATE_STRING2
+  C:815EH         SYMBOL        IGNORE_NEXT
+  C:8135H         SYMBOL        MATCH_PATTERN
+  C:8161H         SYMBOL        STOP
+  C:8133H         SYMBOL        TRAVERSE_STRING
+  C:8100H         LINE#         7
+  C:8103H         LINE#         8
+  C:8105H         LINE#         9
+  C:8107H         LINE#         12
+  C:8108H         LINE#         13
+  C:8109H         LINE#         14
+  C:810AH         LINE#         15
+  C:810CH         LINE#         17
+  C:810EH         LINE#         18
+  C:810FH         LINE#         19
+  C:8111H         LINE#         21
+  C:8114H         LINE#         22
+  C:8116H         LINE#         23
+  C:8118H         LINE#         25
+  C:8119H         LINE#         26
+  C:811AH         LINE#         27
+  C:811BH         LINE#         28
+  C:811DH         LINE#         30
+  C:811FH         LINE#         31
+  C:8121H         LINE#         33
+  C:8122H         LINE#         34
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/29/2022  16:04:50  PAGE 2
+
+
+  C:8123H         LINE#         35
+  C:8124H         LINE#         36
+  C:8126H         LINE#         38
+  C:8128H         LINE#         40
+  C:812AH         LINE#         41
+  C:812BH         LINE#         43
+  C:812EH         LINE#         44
+  C:8130H         LINE#         45
+  C:8131H         LINE#         47
+  C:8133H         LINE#         49
+  C:8135H         LINE#         51
+  C:8138H         LINE#         52
+  C:813AH         LINE#         53
+  C:813BH         LINE#         54
+  C:813CH         LINE#         55
+  C:813EH         LINE#         56
+  C:813FH         LINE#         57
+  C:8140H         LINE#         59
+  C:8142H         LINE#         61
+  C:8145H         LINE#         62
+  C:8147H         LINE#         63
+  C:8148H         LINE#         64
+  C:814AH         LINE#         65
+  C:814BH         LINE#         67
+  C:814DH         LINE#         68
+  C:8150H         LINE#         70
+  C:8151H         LINE#         71
+  C:8152H         LINE#         72
+  C:8154H         LINE#         73
+  C:8157H         LINE#         75
+  C:815AH         LINE#         76
+  C:815BH         LINE#         77
+  C:815CH         LINE#         78
+  C:815EH         LINE#         81
+  C:815FH         LINE#         82
+  C:8161H         LINE#         84
+  -------         ENDMOD        EXP1C_LAST_OCCURENCE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0063H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33123
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

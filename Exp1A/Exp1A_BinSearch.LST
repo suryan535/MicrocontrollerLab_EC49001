@@ -1,0 +1,108 @@
+A51 MACRO ASSEMBLER  EXP1A_BINSEARCH                                                      08/22/2022 15:11:34 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp1A_BinSearch.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp1A_BinSearch.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     
+                       2                     
+                       3                     
+8132                   4                     ORG 8132H
+                       5                     
+8132 909500            6                     MOV DPTR,#9500H
+8135 74FE              7                     MOV A,#254
+8137 F0                8                     MOVX @DPTR,A
+                       9     
+8138 909550           10                     MOV DPTR,#9550H
+813B 74FF             11                     MOV A,#0XFF ; store -1 by default
+813D F0               12                     MOVX @DPTR,A
+                      13     
+813E 7800             14                     MOV R0,#0 ; left bound of subarray
+8140 7963             15                     MOV R1,#99 ; right bound of subarray
+                      16     
+8142                  17                     LOOP:
+8142 E8               18                             MOV A,R0
+8143 89F0             19                             MOV B,R1
+8145 25F0             20                             ADD A,B ; A = R0+R1
+8147 75F002           21                             MOV B,#2
+814A 84               22                             DIV AB ; A = (R0+R1)/2
+814B FA               23                             MOV R2,A ; store the index of the midpoint element in R2
+                      24     
+814C 909000           25                             MOV DPTR,#9000H
+814F F582             26                             MOV DPL,A
+8151 E0               27                             MOVX A,@DPTR ; get the value stored in array at midpoint
+8152 F5F0             28                             MOV B,A
+                      29     
+8154 909500           30                             MOV DPTR,#9500H
+8157 E0               31                             MOVX A,@DPTR ; get the value to be searched for
+                      32     
+8158 B5F007           33                             CJNE A,B,COMPARE_VALUES ; if A!=B, compare values and reject approp
+                             riate half
+815B 909550           34                             MOV DPTR,#9550H ; else store current midpoint index at required add
+                             ress
+815E EA               35                             MOV A,R2
+815F F0               36                             MOVX @DPTR,A
+8160 801A             37                             SJMP STOP
+                      38     
+8162                  39                             COMPARE_VALUES:
+8162 4002             40                                     JC REJECT_UPPER ; if search value<midpoint value, reject up
+                             per half
+8164 8005             41                                     SJMP REJECT_LOWER ; else reject lower half
+                      42     
+8166                  43                                     REJECT_UPPER:
+8166 EA               44                                             MOV A,R2
+8167 14               45                                             DEC A
+8168 F9               46                                             MOV R1,A
+8169 8003             47                                             SJMP UPDATE_BOUNDS
+                      48     
+816B                  49                                     REJECT_LOWER:
+816B EA               50                                             MOV A,R2
+816C 04               51                                             INC A
+816D F8               52                                             MOV R0,A
+                      53     
+816E                  54                             UPDATE_BOUNDS:
+816E E8               55                                     MOV A,R0
+A51 MACRO ASSEMBLER  EXP1A_BINSEARCH                                                      08/22/2022 15:11:34 PAGE     2
+
+816F 89F0             56                                     MOV B,R1
+8171 B5F002           57                                     CJNE A,B,COMPARE_BOUNDS ; if R0!=R1, compare who is greater
+8174 D2D7             58                                     SETB CY ; else set carry = 1 so that it still loops as we w
+                             ant to loop for R0<=R1
+                      59     
+8176                  60                                     COMPARE_BOUNDS:
+8176 40CA             61                                             JC LOOP ; if R0<R1, continue to search
+8178 8002             62                                             SJMP STOP ; else come out of loop
+                      63     
+817A E8               64                                     MOV A,R0
+817B 29               65                                     ADD A,R1
+                      66     
+817C 80FE             67                     STOP: SJMP STOP
+                      68                     
+                      69                     END
+A51 MACRO ASSEMBLER  EXP1A_BINSEARCH                                                      08/22/2022 15:11:34 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+COMPARE_BOUNDS . .  C ADDR   8176H   A   
+COMPARE_VALUES . .  C ADDR   8162H   A   
+CY . . . . . . . .  B ADDR   00D0H.7 A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+LOOP . . . . . . .  C ADDR   8142H   A   
+REJECT_LOWER . . .  C ADDR   816BH   A   
+REJECT_UPPER . . .  C ADDR   8166H   A   
+STOP . . . . . . .  C ADDR   817CH   A   
+UPDATE_BOUNDS. . .  C ADDR   816EH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

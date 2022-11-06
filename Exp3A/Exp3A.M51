@@ -1,0 +1,101 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/17/2022  16:44:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Exp3A.obj TO Exp3A
+
+
+INPUT MODULES INCLUDED:
+  Exp3A.obj (EXP3A)
+
+
+LINK MAP OF MODULE:  Exp3A (EXP3A)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     8158H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Exp3A (EXP3A)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP3A
+  D:0082H         SYMBOL        DPL
+  C:8144H         SYMBOL        LOOP01
+  C:8146H         SYMBOL        LOOP02
+  C:8148H         SYMBOL        LOOP03
+  C:8135H         SYMBOL        LOOP1
+  C:8130H         SYMBOL        START
+  C:8100H         LINE#         5
+  C:8103H         LINE#         6
+  C:8105H         LINE#         7
+  C:8106H         LINE#         10
+  C:8109H         LINE#         11
+  C:810BH         LINE#         12
+  C:810CH         LINE#         14
+  C:810DH         LINE#         15
+  C:810FH         LINE#         16
+  C:8110H         LINE#         18
+  C:8111H         LINE#         19
+  C:8113H         LINE#         20
+  C:8114H         LINE#         22
+  C:8115H         LINE#         23
+  C:8117H         LINE#         24
+  C:8118H         LINE#         26
+  C:8119H         LINE#         27
+  C:811BH         LINE#         28
+  C:811CH         LINE#         30
+  C:811DH         LINE#         31
+  C:811FH         LINE#         32
+  C:8120H         LINE#         34
+  C:8121H         LINE#         35
+  C:8123H         LINE#         36
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/17/2022  16:44:21  PAGE 2
+
+
+  C:8124H         LINE#         38
+  C:8125H         LINE#         39
+  C:8127H         LINE#         40
+  C:8128H         LINE#         42
+  C:8129H         LINE#         43
+  C:812BH         LINE#         44
+  C:812CH         LINE#         46
+  C:812DH         LINE#         47
+  C:812FH         LINE#         48
+  C:8130H         LINE#         51
+  C:8132H         LINE#         52
+  C:8135H         LINE#         56
+  C:8137H         LINE#         57
+  C:8138H         LINE#         58
+  C:813BH         LINE#         59
+  C:813CH         LINE#         61
+  C:813FH         LINE#         62
+  C:8141H         LINE#         63
+  C:8142H         LINE#         66
+  C:8144H         LINE#         68
+  C:8146H         LINE#         70
+  C:8148H         LINE#         72
+  C:814AH         LINE#         73
+  C:814CH         LINE#         74
+  C:814EH         LINE#         76
+  C:8151H         LINE#         77
+  C:8153H         LINE#         78
+  C:8154H         LINE#         80
+  C:8156H         LINE#         82
+  -------         ENDMOD        EXP3A
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0058H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33112
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

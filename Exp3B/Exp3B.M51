@@ -1,0 +1,133 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/31/2022  16:52:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Exp3B.obj TO Exp3B
+
+
+INPUT MODULES INCLUDED:
+  Exp3B.obj (EXP3B)
+
+
+LINK MAP OF MODULE:  Exp3B (EXP3B)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     818AH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Exp3B (EXP3B)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP3B
+  D:00F0H         SYMBOL        B
+  C:8132H         SYMBOL        DIGIT1_LOOP
+  D:0082H         SYMBOL        DPL
+  C:8149H         SYMBOL        LOOP01
+  C:8158H         SYMBOL        LOOP02
+  C:815AH         SYMBOL        LOOP03
+  C:8170H         SYMBOL        LOOP05
+  C:8172H         SYMBOL        LOOP06
+  C:8147H         SYMBOL        LOOP1
+  C:8100H         LINE#         5
+  C:8103H         LINE#         6
+  C:8105H         LINE#         7
+  C:8106H         LINE#         10
+  C:8109H         LINE#         11
+  C:810BH         LINE#         12
+  C:810CH         LINE#         14
+  C:810DH         LINE#         15
+  C:810FH         LINE#         16
+  C:8110H         LINE#         18
+  C:8111H         LINE#         19
+  C:8113H         LINE#         20
+  C:8114H         LINE#         22
+  C:8115H         LINE#         23
+  C:8117H         LINE#         24
+  C:8118H         LINE#         26
+  C:8119H         LINE#         27
+  C:811BH         LINE#         28
+  C:811CH         LINE#         30
+  C:811DH         LINE#         31
+  C:811FH         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/31/2022  16:52:04  PAGE 2
+
+
+  C:8120H         LINE#         34
+  C:8121H         LINE#         35
+  C:8123H         LINE#         36
+  C:8124H         LINE#         38
+  C:8125H         LINE#         39
+  C:8127H         LINE#         40
+  C:8128H         LINE#         42
+  C:8129H         LINE#         43
+  C:812BH         LINE#         44
+  C:812CH         LINE#         46
+  C:812DH         LINE#         47
+  C:812FH         LINE#         48
+  C:8130H         LINE#         50
+  C:8132H         LINE#         53
+  C:8135H         LINE#         54
+  C:8137H         LINE#         55
+  C:8138H         LINE#         57
+  C:813BH         LINE#         58
+  C:813DH         LINE#         59
+  C:813EH         LINE#         60
+  C:8141H         LINE#         61
+  C:8142H         LINE#         64
+  C:8144H         LINE#         65
+  C:8147H         LINE#         72
+  C:8149H         LINE#         74
+  C:814BH         LINE#         75
+  C:814CH         LINE#         76
+  C:814FH         LINE#         77
+  C:8150H         LINE#         79
+  C:8153H         LINE#         80
+  C:8155H         LINE#         81
+  C:8156H         LINE#         84
+  C:8158H         LINE#         86
+  C:815AH         LINE#         88
+  C:815CH         LINE#         89
+  C:815EH         LINE#         91
+  C:8161H         LINE#         92
+  C:8163H         LINE#         93
+  C:8164H         LINE#         95
+  C:8167H         LINE#         96
+  C:8169H         LINE#         97
+  C:816AH         LINE#         98
+  C:816DH         LINE#         99
+  C:816EH         LINE#         101
+  C:8170H         LINE#         103
+  C:8172H         LINE#         105
+  C:8174H         LINE#         106
+  C:8176H         LINE#         107
+  C:8178H         LINE#         113
+  C:817BH         LINE#         114
+  C:817DH         LINE#         115
+  C:817EH         LINE#         117
+  C:8180H         LINE#         118
+  C:8181H         LINE#         119
+  C:8182H         LINE#         120
+  C:8185H         LINE#         121
+  C:8186H         LINE#         122
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/31/2022  16:52:04  PAGE 3
+
+
+  C:8188H         LINE#         124
+  -------         ENDMOD        EXP3B
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 008AH BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33162
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

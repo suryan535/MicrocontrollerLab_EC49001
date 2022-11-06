@@ -1,0 +1,131 @@
+A51 MACRO ASSEMBLER  EXP1C_CIRCULAR_MATCH                                                 08/29/2022 16:27:50 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp1C_Circular_Match.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp1C_Circular_Match.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     
+                       2                     
+                       3                     
+                       4                     
+8100                   5                     ORG 8100H
+                       6                             
+8100 909000            7                     MOV DPTR,#9000H
+8103 7405              8                     MOV A,#05H
+8105 7804              9                     MOV R0,#4 ; stores length of pattern
+                      10     
+8107                  11                     GENERATE_PATTERN:
+8107 F0               12                             MOVX @DPTR,A
+8108 14               13                             DEC A
+8109 A3               14                             INC DPTR
+810A D8FB             15                             DJNZ R0,GENERATE_PATTERN
+                      16                             
+810C 7400             17                     MOV A,#0
+810E F0               18                     MOVX @DPTR,A
+810F 7802             19                     MOV R0,#2
+                      20     
+8111 909200           21                     MOV DPTR,#9200H
+8114 7403             22                     MOV A,#03H
+8116 7902             23                     MOV R1,#2 ; stores length of string to be matched with
+8118                  24                     GENERATE_STRING1:
+8118 F0               25                             MOVX @DPTR,A
+8119 14               26                             DEC A
+811A A3               27                             INC DPTR
+811B D9FB             28                             DJNZ R1,GENERATE_STRING1
+                      29                             
+811D 7408             30                     MOV A,#08H
+811F 7905             31                     MOV R1,#5 ; stores length of string to be matched with
+8121                  32                     GENERATE_STRING2:
+8121 F0               33                             MOVX @DPTR,A
+8122 14               34                             DEC A
+8123 A3               35                             INC DPTR
+8124 D9FB             36                             DJNZ R1,GENERATE_STRING2
+                      37                     
+8126 7907             38                     MOV R1,#7 ; stores length of string to be matched with
+                      39                     
+8128 7400             40                     MOV A,#0
+812A F0               41                     MOVX @DPTR,A
+                      42     
+812B 909500           43                     MOV DPTR,#9500H
+812E 74FF             44                     MOV A,#0XFF
+8130 F0               45                     MOVX @DPTR,A
+                      46     
+8131 7A00             47                     MOV R2,#0 ; starting index to be matched in string
+8133                  48                     TRAVERSE_STRING:
+                      49                             ; check if the starting index == length of string
+8133 EA               50                             MOV A,R2
+8134 89F0             51                             MOV B,R1
+8136 65F0             52                             XRL A,B
+8138 6030             53                             JZ STOP
+                      54                             
+813A 7B00             55                             MOV R3,#0 ; current index in pattern which is to be matched with st
+                             ring
+813C                  56                             MATCH_PATTERN:
+813C 909200           57                                     MOV DPTR,#9200H
+A51 MACRO ASSEMBLER  EXP1C_CIRCULAR_MATCH                                                 08/29/2022 16:27:50 PAGE     2
+
+813F E582             58                                     MOV A,DPL
+8141 2A               59                                     ADD A,R2
+8142 2B               60                                     ADD A,R3
+8143 89F0             61                                     MOV B,R1
+8145 84               62                                     DIV AB
+8146 85F082           63                                     MOV DPL,B
+8149 E0               64                                     MOVX A,@DPTR
+814A FC               65                                     MOV R4,A ; stores the current character to be compared in t
+                             he main string
+                      66     
+814B 909000           67                                     MOV DPTR,#9000H
+814E E582             68                                     MOV A,DPL
+8150 2B               69                                     ADD A,R3
+8151 F582             70                                     MOV DPL,A
+8153 E0               71                                     MOVX A,@DPTR ; stores the current character of the pattern
+                      72     
+8154 8CF0             73                                     MOV B,R4
+8156 B5F00E           74                                     CJNE A,B,IGNORE_NEXT ; if current characters didn't match, 
+                             ignore subsequent characters 
+                      75     
+8159 0B               76                                     INC R3
+815A EB               77                                     MOV A,R3
+815B 88F0             78                                     MOV B,R0
+815D B5F0DC           79                                     CJNE A,B,MATCH_PATTERN ; If the entire pattern is not yet m
+                             atched
+                      80     
+8160 909500           81                                     MOV DPTR,#9500H
+8163 EA               82                                     MOV A,R2
+8164 F0               83                                     MOVX @DPTR,A
+8165 8003             84                                     SJMP STOP
+                      85     
+8167                  86                                     IGNORE_NEXT:
+8167 0A               87                                             INC R2 ; increment starting index in string and sta
+                             rt checking again
+8168 80C9             88                                             SJMP TRAVERSE_STRING
+                      89     
+816A 80FE             90                     STOP: SJMP STOP
+                      91                     
+                      92                     END
+A51 MACRO ASSEMBLER  EXP1C_CIRCULAR_MATCH                                                 08/29/2022 16:27:50 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+GENERATE_PATTERN .  C ADDR   8107H   A   
+GENERATE_STRING1 .  C ADDR   8118H   A   
+GENERATE_STRING2 .  C ADDR   8121H   A   
+IGNORE_NEXT. . . .  C ADDR   8167H   A   
+MATCH_PATTERN. . .  C ADDR   813CH   A   
+STOP . . . . . . .  C ADDR   816AH   A   
+TRAVERSE_STRING. .  C ADDR   8133H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

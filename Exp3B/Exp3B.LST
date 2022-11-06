@@ -1,0 +1,162 @@
+A51 MACRO ASSEMBLER  EXP3B                                                                10/31/2022 16:52:04 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp3B.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp3B.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+8100                   3                     ORG 8100H
+                       4                     
+8100 90E803            5                     MOV DPTR,#0XE803
+8103 7480              6                     MOV A,#80H
+8105 F0                7                     MOVX @DPTR,A
+                       8                     
+                       9                     
+8106 909000           10                     MOV DPTR,#9000H
+8109 743F             11                     MOV A,#0X3F
+810B F0               12                     MOVX @DPTR,A
+                      13                     
+810C A3               14                     INC DPTR
+810D 7406             15                     MOV A,#0X06
+810F F0               16                     MOVX @DPTR,A
+                      17                     
+8110 A3               18                     INC DPTR
+8111 745B             19                     MOV A,#0X5B
+8113 F0               20                     MOVX @DPTR,A
+                      21                     
+8114 A3               22                     INC DPTR
+8115 744F             23                     MOV A,#0X4F
+8117 F0               24                     MOVX @DPTR,A
+                      25                     
+8118 A3               26                     INC DPTR
+8119 7466             27                     MOV A,#0X66
+811B F0               28                     MOVX @DPTR,A
+                      29                     
+811C A3               30                     INC DPTR
+811D 746D             31                     MOV A,#0X6D
+811F F0               32                     MOVX @DPTR,A
+                      33                     
+8120 A3               34                     INC DPTR
+8121 747D             35                     MOV A,#0X7D
+8123 F0               36                     MOVX @DPTR,A
+                      37                     
+8124 A3               38                     INC DPTR
+8125 7407             39                     MOV A,#0X07
+8127 F0               40                     MOVX @DPTR,A
+                      41                     
+8128 A3               42                     INC DPTR
+8129 747F             43                     MOV A,#0X7F
+812B F0               44                     MOVX @DPTR,A
+                      45                     
+812C A3               46                     INC DPTR
+812D 746F             47                     MOV A,#0X6F
+812F F0               48                     MOVX @DPTR,A
+                      49     
+8130 7D00             50                     MOV R5,#0
+                      51     
+8132                  52                     DIGIT1_LOOP:
+8132 90E802           53                         MOV DPTR,#0XE802
+8135 7408             54                             MOV A,#8H
+8137 F0               55                             MOVX @DPTR,A
+                      56                             
+8138 909000           57                             MOV DPTR,#9000H
+813B 8D82             58                             MOV DPL,R5
+A51 MACRO ASSEMBLER  EXP3B                                                                10/31/2022 16:52:04 PAGE     2
+
+813D E0               59                             MOVX A,@DPTR
+813E 90E801           60                             MOV DPTR,#0XE801
+8141 F0               61                             MOVX @DPTR,A
+                      62                             
+                      63                             
+8142 780A             64                             MOV R0,#10
+8144 909000           65                             MOV DPTR,#9000H
+                      66                             
+                      67                             
+8147                  68                             LOOP1:
+                      69                                
+                      70                                
+                      71                               
+8147 7A7F             72                                MOV R2,#127
+8149                  73                                LOOP01:
+8149 A982             74                                MOV R1,DPL
+814B E0               75                                MOVX A,@DPTR
+814C 90E800           76                                MOV DPTR,#0XE800
+814F F0               77                                MOVX @DPTR,A
+                      78     
+8150 90E802           79                                        MOV DPTR,#0XE802
+8153 7402             80                                        MOV A,#2H
+8155 F0               81                                        MOVX @DPTR,A
+                      82                                
+                      83                                     
+8156 7B20             84                                             MOV R3,#32
+8158                  85                                             LOOP02:
+8158 7C37             86                                                     MOV R4,#55
+815A                  87                                                     LOOP03:
+815A DCFE             88                                                             DJNZ R4,LOOP03
+815C DBFA             89                                                     DJNZ R3,LOOP02
+                      90                                     
+815E 90E802           91                                             MOV DPTR,#0XE802
+8161 7408             92                                             MOV A,#8H
+8163 F0               93                                             MOVX @DPTR,A
+                      94                                             
+8164 909000           95                                             MOV DPTR,#9000H
+8167 8D82             96                                     MOV DPL,R5
+8169 E0               97                                     MOVX A,@DPTR
+816A 90E800           98                                     MOV DPTR,#0XE800
+816D F0               99                                     MOVX @DPTR,A
+                     100                                     
+816E 7B20            101                                                     MOV R3,#32
+8170                 102                                                     LOOP05:
+8170 7C37            103                                                             MOV R4,#55
+8172                 104                                                             LOOP06:
+8172 DCFE            105                                                                     DJNZ R4,LOOP06
+8174 DBFA            106                                                             DJNZ R3,LOOP05
+8176 DAD1            107                                                     DJNZ R2,LOOP01
+                     108                                     
+                     109                                     
+                     110                                     
+                     111                                     
+                     112                                     
+8178 909000          113                                     MOV DPTR,#9000H
+817B 8982            114                                     MOV DPL,R1
+817D A3              115                                     INC DPTR
+                     116                                     
+817E D8C7            117                                     DJNZ R0,LOOP1
+8180 0D              118                             INC R5
+8181 ED              119                             MOV A,R5
+8182 75F003          120                             MOV B,#3
+8185 84              121                             DIV AB
+8186 ADF0            122                             MOV R5,B
+                     123                                     
+8188 80A8            124                             SJMP DIGIT1_LOOP
+A51 MACRO ASSEMBLER  EXP3B                                                                10/31/2022 16:52:04 PAGE     3
+
+                     125                             
+                     126                     END
+A51 MACRO ASSEMBLER  EXP3B                                                                10/31/2022 16:52:04 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DIGIT1_LOOP. . . .  C ADDR   8132H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+LOOP01 . . . . . .  C ADDR   8149H   A   
+LOOP02 . . . . . .  C ADDR   8158H   A   
+LOOP03 . . . . . .  C ADDR   815AH   A   
+LOOP05 . . . . . .  C ADDR   8170H   A   
+LOOP06 . . . . . .  C ADDR   8172H   A   
+LOOP1. . . . . . .  C ADDR   8147H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

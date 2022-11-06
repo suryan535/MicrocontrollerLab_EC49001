@@ -1,0 +1,85 @@
+A51 MACRO ASSEMBLER  EXP1B_POLY_EVAL                                                      08/29/2022 15:30:26 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp1B_Poly_Eval.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp1B_Poly_Eval.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     
+                       2                     
+                       3                     ;ORG 8100H      
+                       4                     
+                       5                     ;MOV DPTR,#9500H
+                       6                     ;MOV A,#4
+                       7                     ;MOVX @DPTR,A ; value of n stored at 9500H
+                       8     
+                       9                     ;MOV DPTR,#9501H
+                      10                     ;MOV A,#2
+                      11                     ;MOVX @DPTR,A ; value of x stored at 9501H
+                      12     
+                      13                     ;MOV DPTR,#9500H
+                      14                     ;MOVX A,@DPTR
+                      15                     ;MOV R0,A
+                      16                     ;INC R0
+                      17     
+                      18                     ;MOV DPTR,#9502H
+                      19                     ;MOV A,#10 ; value of a[0]
+                      20     
+                      21                     ;LOOP:
+                      22                             ;MOVX @DPTR,A ; keeps storing a[0],a[1],...,a[n]
+                      23                             ;INC DPTR
+                      24                             ;DEC A
+                      25                             ;DJNZ R0,LOOP
+                      26     
+                      27                     ;MOV DPTR,#9501H
+                      28                     ;MOVX A,@DPTR
+                      29                     ;MOV R0,A ; R0 stores the value of x
+                      30     
+                      31                     ;MOV DPTR,#9500H
+                      32                     ;MOVX A,@DPTR
+                      33                     ;MOV R1,A ; R1 stores the value of n
+                      34     
+                      35                     ;MOV DPTR,#9502H
+                      36                     ;MOV A,DPL ; lower bits of starting address
+                      37                     ;ADD A,R1 ; lower bits of address of a[n]
+                      38                     ;MOV DPL,A ; DPTR points to address of a[n]
+                      39                     ;MOVX A,@DPTR
+                      40                     
+                      41                     ;MOV R2,A ; R2 stores the value of evaluated polynomial
+                      42     
+                      43                     ;EVALUATE:
+                      44                             ;MOV A,R2
+                      45                             ;MOV B,R0
+                      46                             ;MUL AB ; multiply x with value evaluated till now
+                      47                             ;MOV R2,A ; store the value back into R2
+                      48                             ;DEC DPL
+                      49                             ;MOVX A,@DPTR ; store previous coefficient in A
+                      50                             ;ADD A,R2 ; add the coefficient to the result
+                      51                             ;MOV R2,A
+                      52                             ;DJNZ R1,EVALUATE
+                      53                             
+                      54                     ;MOV DPTR,#9550H
+                      55                     ;MOV A,R2
+                      56                     ;MOVX @DPTR,A
+                      57     
+                      58                     ;STOP: SJMP STOP
+A51 MACRO ASSEMBLER  EXP1B_POLY_EVAL                                                      08/29/2022 15:30:26 PAGE     2
+
+                      59                     
+                      60                     END
+A51 MACRO ASSEMBLER  EXP1B_POLY_EVAL                                                      08/29/2022 15:30:26 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

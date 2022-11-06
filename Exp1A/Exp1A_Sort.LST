@@ -1,0 +1,87 @@
+A51 MACRO ASSEMBLER  EXP1A_SORT                                                           08/22/2022 15:11:35 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Exp1A_Sort.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Exp1A_Sort.A51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1                     
+                       2                     
+8100                   3                     ORG 8100H
+                       4                     
+                       5                     ; Sorting the 100 Numbers
+8100 909000            6                     MOV DPTR,#9000H
+                       7            
+8103 7864              8                     MOV R0,#100
+8105 74FC              9                     MOV A,#252
+                      10                     
+                      11                     ; populate the array to be sorted
+8107                  12                     LOOP:
+8107 F0               13                             MOVX @DPTR,A
+8108 14               14                             DEC A
+8109 A3               15                             INC DPTR
+810A D8FB             16                             DJNZ R0,LOOP
+                      17     
+810C 7864             18                     MOV R0,#100
+810E                  19                     LOOP1:
+810E 7963             20                             MOV R1,#99
+8110 909000           21                             MOV DPTR,#9000H
+                      22                             
+8113                  23                             LOOP2:
+8113 E0               24                                     MOVX A,@DPTR
+8114 F5F0             25                                     MOV B,A ; B stores a[i]
+                      26     
+8116 A3               27                                     INC DPTR
+8117 E0               28                                     MOVX A,@DPTR ; A stores a[i+1]
+                      29     
+8118 B5F000           30                                     CJNE A,B,NOT_EQUAl
+811B                  31                                     NOT_EQUAL:
+811B 4006             32                                             JC DO_SWAP
+                      33     
+811D D9F4             34                                     DJNZ R1,LOOP2
+811F D8ED             35                                     DJNZ R0,LOOP1
+8121 800D             36                                     SJMP STOP
+                      37     
+8123                  38                                     DO_SWAP:
+8123 C5F0             39                                             XCH A,B
+                      40     
+8125 F0               41                                     MOVX @DPTR,A ; updated a[i+1] stored at appropriate address
+8126 1582             42                                     DEC DPL ; equivalent to decrementing DPTR since size of arr
+                             ay < 256
+8128 E5F0             43                                     MOV A,B ; move updated a[i] to register B
+812A F0               44                                     MOVX @DPTR,A ; updated a[i] stored at appropriate address
+                      45     
+812B A3               46                                     INC DPTR
+                      47                                     
+812C D9E5             48                                     DJNZ R1,LOOP2
+812E D8DE             49                             DJNZ R0,LOOP1
+                      50     
+8130 80FE             51                     STOP: SJMP STOP
+                      52                             
+                      53                     
+                      54                     
+                      55                     END
+A51 MACRO ASSEMBLER  EXP1A_SORT                                                           08/22/2022 15:11:35 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DO_SWAP. . . . . .  C ADDR   8123H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+LOOP . . . . . . .  C ADDR   8107H   A   
+LOOP1. . . . . . .  C ADDR   810EH   A   
+LOOP2. . . . . . .  C ADDR   8113H   A   
+NOT_EQUAL. . . . .  C ADDR   811BH   A   
+STOP . . . . . . .  C ADDR   8130H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

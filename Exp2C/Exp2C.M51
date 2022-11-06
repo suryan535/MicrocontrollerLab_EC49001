@@ -1,0 +1,80 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/17/2022  14:22:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Exp2C.obj TO Exp2C
+
+
+INPUT MODULES INCLUDED:
+  Exp2C.obj (EXP2C)
+
+
+LINK MAP OF MODULE:  Exp2C (EXP2C)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     8139H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Exp2C (EXP2C)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP2C
+  D:0082H         SYMBOL        DPL
+  C:810DH         SYMBOL        LOOP
+  C:8125H         SYMBOL        LOOP01
+  C:8127H         SYMBOL        LOOP02
+  C:8129H         SYMBOL        LOOP03
+  C:8117H         SYMBOL        LOOP1
+  C:8137H         SYMBOL        PT
+  C:8112H         SYMBOL        START
+  C:8100H         LINE#         5
+  C:8103H         LINE#         6
+  C:8105H         LINE#         7
+  C:8106H         LINE#         9
+  C:8108H         LINE#         10
+  C:810BH         LINE#         11
+  C:810DH         LINE#         14
+  C:810EH         LINE#         15
+  C:810FH         LINE#         16
+  C:8110H         LINE#         17
+  C:8112H         LINE#         20
+  C:8114H         LINE#         21
+  C:8117H         LINE#         25
+  C:8118H         LINE#         26
+  C:811AH         LINE#         27
+  C:811DH         LINE#         28
+  C:811EH         LINE#         31
+  C:8121H         LINE#         32
+  C:8122H         LINE#         33
+  C:8123H         LINE#         35
+  C:8125H         LINE#         37
+  C:8127H         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/17/2022  14:22:54  PAGE 2
+
+
+  C:8129H         LINE#         41
+  C:812BH         LINE#         42
+  C:812DH         LINE#         43
+  C:812FH         LINE#         45
+  C:8132H         LINE#         46
+  C:8134H         LINE#         47
+  C:8135H         LINE#         49
+  C:8137H         LINE#         51
+  -------         ENDMOD        EXP2C
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0039H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33081
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

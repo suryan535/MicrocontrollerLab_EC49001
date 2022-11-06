@@ -1,0 +1,96 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/17/2022  14:58:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Exp2CLDR.obj TO Exp2CLDR
+
+
+INPUT MODULES INCLUDED:
+  Exp2CLDR.obj (EXP2CLDR)
+
+
+LINK MAP OF MODULE:  Exp2CLDR (EXP2CLDR)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     8154H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Exp2CLDR (EXP2CLDR)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXP2CLDR
+  C:8133H         SYMBOL        BLINK
+  D:0082H         SYMBOL        DPL
+  C:810DH         SYMBOL        LOOP
+  C:811DH         SYMBOL        LOOP01
+  C:811FH         SYMBOL        LOOP02
+  C:8121H         SYMBOL        LOOP03
+  C:811BH         SYMBOL        LOOP1
+  C:8140H         SYMBOL        NORMAL
+  C:8114H         SYMBOL        START
+  C:8100H         LINE#         5
+  C:8103H         LINE#         6
+  C:8105H         LINE#         7
+  C:8106H         LINE#         9
+  C:8108H         LINE#         10
+  C:810BH         LINE#         11
+  C:810DH         LINE#         14
+  C:810EH         LINE#         15
+  C:810FH         LINE#         16
+  C:8110H         LINE#         17
+  C:8112H         LINE#         19
+  C:8114H         LINE#         21
+  C:8116H         LINE#         22
+  C:8119H         LINE#         23
+  C:811BH         LINE#         29
+  C:811DH         LINE#         31
+  C:811FH         LINE#         33
+  C:8121H         LINE#         35
+  C:8123H         LINE#         36
+  C:8125H         LINE#         37
+  C:8127H         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/17/2022  14:58:02  PAGE 2
+
+
+  C:812AH         LINE#         40
+  C:812BH         LINE#         41
+  C:812DH         LINE#         42
+  C:812FH         LINE#         43
+  C:8131H         LINE#         44
+  C:8133H         LINE#         47
+  C:8136H         LINE#         48
+  C:8137H         LINE#         49
+  C:8138H         LINE#         51
+  C:813BH         LINE#         52
+  C:813CH         LINE#         54
+  C:813DH         LINE#         55
+  C:813EH         LINE#         57
+  C:8140H         LINE#         60
+  C:8143H         LINE#         61
+  C:8145H         LINE#         62
+  C:8146H         LINE#         64
+  C:8149H         LINE#         65
+  C:814AH         LINE#         68
+  C:814DH         LINE#         69
+  C:814EH         LINE#         70
+  C:814FH         LINE#         72
+  C:8150H         LINE#         74
+  C:8152H         LINE#         76
+  -------         ENDMOD        EXP2CLDR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0054H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33108
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,94 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/10/2022  15:30:46  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE 8255_LED_blink.obj TO 8255_LED_blink
+
+
+INPUT MODULES INCLUDED:
+  8255_LED_blink.obj (8255_LED_BLINK)
+
+
+LINK MAP OF MODULE:  8255_LED_blink (8255_LED_BLINK)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     814AH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  8255_LED_blink (8255_LED_BLINK)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        8255_LED_BLINK
+  C:810CH         SYMBOL        LOOP
+  C:8111H         SYMBOL        LOOP01
+  C:8113H         SYMBOL        LOOP02
+  C:8115H         SYMBOL        LOOP03
+  C:8120H         SYMBOL        LOOP11
+  C:8122H         SYMBOL        LOOP12
+  C:8124H         SYMBOL        LOOP13
+  C:812FH         SYMBOL        LOOP21
+  C:8131H         SYMBOL        LOOP22
+  C:8133H         SYMBOL        LOOP23
+  C:813EH         SYMBOL        LOOP31
+  C:8140H         SYMBOL        LOOP32
+  C:8142H         SYMBOL        LOOP33
+  C:8100H         LINE#         6
+  C:8103H         LINE#         7
+  C:8105H         LINE#         8
+  C:8106H         LINE#         10
+  C:8109H         LINE#         11
+  C:810BH         LINE#         12
+  C:810CH         LINE#         14
+  C:810EH         LINE#         15
+  C:810FH         LINE#         16
+  C:8111H         LINE#         18
+  C:8113H         LINE#         20
+  C:8115H         LINE#         22
+  C:8117H         LINE#         23
+  C:8119H         LINE#         24
+  C:811BH         LINE#         26
+  C:811DH         LINE#         27
+  C:811EH         LINE#         28
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/10/2022  15:30:46  PAGE 2
+
+
+  C:8120H         LINE#         30
+  C:8122H         LINE#         32
+  C:8124H         LINE#         34
+  C:8126H         LINE#         35
+  C:8128H         LINE#         36
+  C:812AH         LINE#         38
+  C:812CH         LINE#         39
+  C:812DH         LINE#         40
+  C:812FH         LINE#         42
+  C:8131H         LINE#         44
+  C:8133H         LINE#         46
+  C:8135H         LINE#         47
+  C:8137H         LINE#         48
+  C:8139H         LINE#         50
+  C:813BH         LINE#         51
+  C:813CH         LINE#         52
+  C:813EH         LINE#         54
+  C:8140H         LINE#         56
+  C:8142H         LINE#         58
+  C:8144H         LINE#         59
+  C:8146H         LINE#         60
+  C:8148H         LINE#         62
+  -------         ENDMOD        8255_LED_BLINK
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004AH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=33098
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
